@@ -16,8 +16,8 @@ const Sort = ({ sort, setSort }) => {
                         className="select"
                         defaultValue={sort}
                     >
-                        <option value="name">Name</option>
-                        <option value="price">Price</option>
+                        <option value="price">Price low to high</option>
+                        <option value="-price">Price high to low</option>
                     </select>
                 </div>
             </form>

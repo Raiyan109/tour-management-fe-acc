@@ -2,7 +2,7 @@ import { BiSearch } from 'react-icons/bi'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { BsFillPersonFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-const Navbar = () => {
+const Navbar = ({ setSearch }) => {
     return (
         <div>
             <header className="text-gray-600 body-font">
@@ -14,10 +14,20 @@ const Navbar = () => {
                         <span className="ml-3 text-xl">AirBnb</span>
                     </a>
                     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                        <a className="mr-5 hover:text-gray-900">Any where</a>
+                        {/* <a className="mr-5 hover:text-gray-900">Any where</a>
                         <a className="mr-5 hover:text-gray-900">Any week</a>
-                        <a className="mr-5 hover:text-gray-900">Add guest</a>
-                        <div><BiSearch /></div>
+                        <a className="mr-5 hover:text-gray-900">Add guest</a> */}
+                        <div>
+
+                            <div className="bg-white items-center justify-between w-full flex rounded-full shadow-lg p-2 mb-5 sticky" style={{ top: "5px" }}>
+                                <input
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    className="font-bold uppercase rounded-full w-full py-4 pl-4 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs" type="text" placeholder="Search" />
+                                <div className="bg-gray-600 p-2 hover:bg-blue-400 cursor-pointer mx-2 rounded-full">
+                                    <BiSearch className="w-6 h-6 text-white" />
+                                </div>
+                            </div>
+                        </div>
 
                     </nav>
                     <div className='flex justify-center items-center gap-2 border-gray-200 shadow-md p-3 rounded-xl'>
